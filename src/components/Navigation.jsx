@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
 export default function Navigation(){ return(
-  <Navbar bg="light" expand="lg" className="sticky-top">
+  <Navbar variant="dark" expand="lg" className=" navbar sticky-top">
   <Container>
     <Navbar.Brand href="#home">FunAI</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
