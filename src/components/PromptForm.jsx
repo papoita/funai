@@ -28,6 +28,13 @@ export default function PromptForm(props) {
     setUserInput(`Write a ${thing} about ${e.target.innerText}`);
   }
 
+  function handleReset(e) {
+    e.preventDefault();
+    setTopic("any topic");
+    setThing("thing")
+    setUserInput("");
+  }
+
   function handleChange(e) {
     e.preventDefault();
     setUserInput(e.target.value);
@@ -68,7 +75,7 @@ export default function PromptForm(props) {
       })
       .catch((error) => {
         console.log(error);
-        setErrorMsg(error.message)
+        setErrorMsg(error.message);
       });
   }
 
@@ -116,7 +123,7 @@ export default function PromptForm(props) {
           />
         </Form.Group>
         <div className="d-flex my-3">
-          <Button className="flex-fill me-1" variant="secondary" type="reset">
+          <Button className="flex-fill me-1" variant="secondary" type="reset" onClick={handleReset}>
             Reset
           </Button>
           <Button
