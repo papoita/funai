@@ -2,7 +2,7 @@ import { useState } from "react";
 const axios = require("axios");
 
 export default function PromptForm(props) {
-  const { result, setResult } = props;
+  const { setResults } = props;
   const [userInput, setUserInput] = useState("");
 
   const placeholderString = "Write a catchline for a new bakery";
@@ -14,7 +14,7 @@ export default function PromptForm(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const key = process.env.REACT_APP_OPENAI_API_KEY;
+    const KEY = process.env.REACT_APP_OPENAI_API_KEY;
 
     console.log("you clicked submit");
     const data = {
@@ -34,7 +34,7 @@ export default function PromptForm(props) {
         {
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${key}`,
+            Authorization: `Bearer ${KEY}`,
           },
         }
       )
@@ -42,8 +42,10 @@ export default function PromptForm(props) {
         (res) => {
           const data = res.data.choices[0].text;
           console.log(data);
-          const newResult = [{ text: data, time: new Date() }, ...result];
-          setResult(newResult);
+          setResults((prevResults) => [
+            { text: data, time: new Date() },
+            ...prevResults,
+          ]);
         },
         (error) => {
           console.log(error);
@@ -52,22 +54,24 @@ export default function PromptForm(props) {
   }
 
   return (
-    <section className="newPrompt">
+    <section className="prompt-form">
       <form
         method="post"
         action="/submit"
-        className="newprompt_form"
+        className="form"
         onSubmit={handleSubmit}
       >
-        {/* onClick={()=>{handlerequest()}} */}
         <textarea
-          className="form_textarea"
+          className="form-textarea"
           name="text"
           placeholder={placeholderString}
           value={userInput}
           onChange={handleChange}
         ></textarea>
-        <input type="submit" value="submit" className="form_input"></input>
+        <button type="reset" className="form-reset">Reset</button>
+        <button type="submit" className="form-submit">
+          Submit
+        </button>
       </form>
     </section>
   );
