@@ -3,13 +3,24 @@ import { FaRegHeart, FaRegThumbsDown } from "react-icons/fa";
 import { format } from 'timeago.js';
 
 export default function PromptList(props) {
-  const { results } = props;
+  const { results, loading } = props;
+
+  if (loading){
+    return (
+      <section className="prompt-list w-75 my-4">
+       <div className="mw-100"> 
+         <img alt="lightbulb loading gif" src="https://i.giphy.com/media/dAoHbGjH7k5ZTeQeBI/giphy.webp" className="img-fluid"/>
+       </div>
+      </section>
+    )
+  }
 
   return (
     <section className="prompt-list w-75 my-4">
       {results.map((x) => (
-        <Card border="primary"  className="my-4">
-        <Card.Header>Catchline</Card.Header>
+    
+        <Card key={x.prompt + x.text} border="primary"  className="my-4">
+        
         <Card.Body>
           <Card.Title>{x.prompt}</Card.Title>
           <Card.Text>
