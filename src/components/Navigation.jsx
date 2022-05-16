@@ -1,6 +1,5 @@
 import React from "react";
-import { Navbar, Container, Nav} from "react-bootstrap";
-import { FaQuestion } from "react-icons/fa";
+import { Navbar, Container} from "react-bootstrap";
 
 export default function Navigation() {
   return (
