@@ -24,7 +24,7 @@ export default function PromptForm(props) {
       top_p: 1.0,
       frequency_penalty: 0.0,
       presence_penalty: 0.0,
-      echo:true,
+      echo: true,
     };
 
     axios
@@ -38,11 +38,17 @@ export default function PromptForm(props) {
           },
         }
       )
-      .then((res) => {
-        const data = res.data.choices[0].text;
-        console.log(data);
-        setResult(data);
-      });
+      .then(
+        (res) => {
+          const data = res.data.choices[0].text;
+          console.log(data);
+          const newResult = [{ text: data, time: new Date() }, ...result];
+          setResult(newResult);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
   }
 
   return (
@@ -63,7 +69,6 @@ export default function PromptForm(props) {
         ></textarea>
         <input type="submit" value="submit" className="form_input"></input>
       </form>
-      <div>{result}</div>
     </section>
   );
 }
