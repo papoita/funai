@@ -6,16 +6,8 @@ export default function Navigation() {
   return (
     <header className="header">
       <Navbar bg="primary" variant="dark" expand="lg" className=" navbar sticky-top">
-        <Container>
+        <Container className="justify-content-center">
           <Navbar.Brand href="#home" className="fs-3 fw-bold"> inspirAItion</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link href="#home">
-                <FaQuestion />
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
         </Container>
       </Navbar>
     </header>
