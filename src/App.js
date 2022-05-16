@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Navigation />
-      <main>
+      <main className="d-flex flex-column align-items-center my-5">
         <PromptForm setResults={setResults} />
         <PromptList results={results} />
       </main>

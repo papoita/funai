@@ -1,11 +1,10 @@
+import { Form, Button } from "react-bootstrap";
 import { useState } from "react";
 const axios = require("axios");
 
 export default function PromptForm(props) {
   const { setResults } = props;
   const [userInput, setUserInput] = useState("");
-
-  const placeholderString = "Write a catchline for a new bakery";
 
   function handleChange(e) {
     e.preventDefault();
@@ -24,7 +23,7 @@ export default function PromptForm(props) {
       top_p: 1.0,
       frequency_penalty: 0.0,
       presence_penalty: 0.0,
-      echo: true,
+      
     };
 
     axios
@@ -43,7 +42,7 @@ export default function PromptForm(props) {
           const data = res.data.choices[0].text;
           console.log(data);
           setResults((prevResults) => [
-            { text: data, time: new Date() },
+            { prompt:userInput, text: data, time: new Date() },
             ...prevResults,
           ]);
         },
@@ -54,25 +53,29 @@ export default function PromptForm(props) {
   }
 
   return (
-    <section className="prompt-form">
-      <form
-        method="post"
-        action="/submit"
-        className="form"
-        onSubmit={handleSubmit}
-      >
-        <textarea
-          className="form-textarea"
-          name="text"
-          placeholder={placeholderString}
-          value={userInput}
-          onChange={handleChange}
-        ></textarea>
-        <button type="reset" className="form-reset">Reset</button>
-        <button type="submit" className="form-submit">
-          Submit
-        </button>
-      </form>
+    <section className="prompt-form w-75">
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Write a catchline about..</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={5}
+            className="border border-secondary"
+            name="text"
+            placeholder="Write a catchline for a new bakery"
+            value={userInput}
+            onChange={handleChange}
+          />
+        </Form.Group>
+        <div className="d-flex my-3">
+          <Button className="flex-fill me-1" variant="secondary" type="reset">
+            Reset
+          </Button>
+          <Button className="flex-fill ms-1" variant="primary" type="submit">
+            Submit
+          </Button>
+        </div>
+      </Form>
     </section>
   );
 }
