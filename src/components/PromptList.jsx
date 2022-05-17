@@ -1,5 +1,5 @@
 import { Card } from "react-bootstrap";
-import { FaRegHeart, FaRegThumbsDown } from "react-icons/fa";
+import { FaRegHeart} from "react-icons/fa";
 import { format } from "timeago.js";
 import { useState } from "react";
 import { IconContext } from "react-icons";
