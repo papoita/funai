@@ -33,7 +33,7 @@ export default function PromptList(props) {
           
           <div className="footer-icons">
                 <FaRegThumbsDown className="thumbs-down-icon" />
-                <FaRegHeart className="heart-icon" />
+                <FaRegHeart className="heart-icon" data-testid="heart" />
               </div>
           </Card.Footer>
       </Card>
