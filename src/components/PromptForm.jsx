@@ -87,15 +87,15 @@ export default function PromptForm(props) {
         <DropdownButton
           variant="outline-secondary"
           title={thing}
-          id="input-group-dropdown-2"
+          id="input-group-dropdown-1"
           align="end"
         >
-          <Dropdown.Item onClick={handleThing}>catchline</Dropdown.Item>
+          <Dropdown.Item onClick={handleThing} data-testid="catchline">catchline</Dropdown.Item>
           <Dropdown.Item onClick={handleThing}>poem</Dropdown.Item>
           <Dropdown.Item onClick={handleThing}>story</Dropdown.Item>
         </DropdownButton>
 
-        <InputGroup.Text id="basic-addon1">about </InputGroup.Text>
+        <InputGroup.Text id="basic-addon2">about </InputGroup.Text>
 
         <DropdownButton
           variant="outline-secondary"
@@ -106,7 +106,7 @@ export default function PromptForm(props) {
           <Dropdown.Item onClick={handleTopic}>a new bakery</Dropdown.Item>
           <Dropdown.Item onClick={handleTopic}>an apple</Dropdown.Item>
 
-          <Dropdown.Item onClick={handleTopic}>my favorite store</Dropdown.Item>
+          <Dropdown.Item onClick={handleTopic} data-testid="myfavoritestore">my favorite store</Dropdown.Item>
         </DropdownButton>
       </InputGroup>
 
