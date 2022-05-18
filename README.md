@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+@[papoita](https://github.com/papoita) | version 1.0.0
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FunAI project / [inspirAItion app](https://inspiraition.netlify.app/)
 
-## Available Scripts
+This project was completed by [Paola Perez Leiva](https://www.linkedin.com/in/perezleivapaola/) as part of a job application challenge. It also became an exercise into consolidating abilities as a software developer. 
 
-In the project directory, you can run:
+## InspirAItion 
+Is a web application that allows users to submit text and get a completion response from OpenAI API. They can like the post and they see the response ordered from newest to oldest.
 
-### `npm start`
+## Features:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* A dropdown menu provides example prompt recommendations allowing the UI to guide the user. It automatically fills the textarea with the user's selection.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* The user can modify the placeholder and add any desired input in the textarea.
 
-### `npm test`
+* The user can reset the form and clear the textarea.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* A loading gif will render while response is obtained from the API to improve the UX.
 
-### `npm run build`
+* The response from the API is rendered from newest to oldest in a humanized manner, showing the date and the timeago it was created.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* There is a clickable heart icon that will change color if the user likes/unlikes the post response.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* The interface is simple, straightforward and responsive. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Links to the repo and linkedin of the developer are included in the footer.
 
-### `npm run eject`
+## Techstack
+  
+ 💡 This frontend project is built with React, React-Bootstrap, Bootstrap, Sass, React-icons library.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+ 💡 App is tested using Jest for component rendering and Cypress for end-end. 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ 💡 Users can communicate with an API server over HTTP, using Axios.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+ 💡 Deployed and live using Netlify: [InspirAItion](https://inspiraition.netlify.app/)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Screenshots
 
-## Learn More
+### InspirAItion UI
+!["Create Appointment"](/docs/inspirAItion.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## [OpenAI API](https://beta.openai.com/docs/introduction)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The [completion](https://beta.openai.com/docs/guides/completion) endpoint combined with `text-curie-001` engine were selected to provide cheap, fast and accurate completion responses. 
 
-### Analyzing the Bundle Size
+> _"...You input some text as a prompt, and the model will generate a text completion that attempts to match whatever context or pattern you gave it. For example, if you give the API the prompt, “Write a tagline for an ice cream shop”, it will return a completion like “We serve up smiles with every scoop!”_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+# Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Running funai
 
-### Advanced Configuration
+Install dependencies 
+```sh
+npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Run funai repo at port 3000
 
-### Deployment
+```sh
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+### Dependencies
+* axios
+* openai
+* react
+* react-bootstrap
+* bootstrap
+* sass
+* react-scripts
+* timeago
+* react-dom
+* react-icons
+* testing-library-react
+* cypress
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Running Jest Test Framework
+
+```sh
+npm run test
+```
+
+## Running Cypress end-end testing
+
+```sh
+npm run cypress:open
+```
