@@ -16,6 +16,8 @@ export default function PromptForm(props) {
 
   const [errorMsg, setErrorMsg] = useState("");
 
+  const [id, setId] = useState(0);
+
   function handleThing(e) {
     e.preventDefault();
     setThing(e.target.innerText);
@@ -68,9 +70,10 @@ export default function PromptForm(props) {
       .then((res) => {
         const data = res.data.choices[0].text;
         setResults((prevResults) => [
-          { prompt: userInput, text: data, time: new Date() },
+          { id:id, prompt: userInput, text: data, time: new Date() },
           ...prevResults,
         ]);
+        setId(id + 1);
         setLoading(false);
       })
       .catch((error) => {
