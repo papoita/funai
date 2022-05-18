@@ -33,7 +33,7 @@ export default function PromptForm(props) {
   function handleReset(e) {
     e.preventDefault();
     setTopic("any topic");
-    setThing("thing")
+    setThing("thing");
     setUserInput("");
   }
 
@@ -70,7 +70,7 @@ export default function PromptForm(props) {
       .then((res) => {
         const data = res.data.choices[0].text;
         setResults((prevResults) => [
-          { id:id, prompt: userInput, text: data, time: new Date() },
+          { id: id, prompt: userInput, text: data, time: new Date() },
           ...prevResults,
         ]);
         setId(id + 1);
@@ -93,7 +93,9 @@ export default function PromptForm(props) {
           id="input-group-dropdown-1"
           align="end"
         >
-          <Dropdown.Item onClick={handleThing} data-testid="catchline">catchline</Dropdown.Item>
+          <Dropdown.Item onClick={handleThing} data-testid="catchline">
+            catchline
+          </Dropdown.Item>
           <Dropdown.Item onClick={handleThing}>poem</Dropdown.Item>
           <Dropdown.Item onClick={handleThing}>story</Dropdown.Item>
         </DropdownButton>
@@ -109,7 +111,9 @@ export default function PromptForm(props) {
           <Dropdown.Item onClick={handleTopic}>a new bakery</Dropdown.Item>
           <Dropdown.Item onClick={handleTopic}>an apple</Dropdown.Item>
 
-          <Dropdown.Item onClick={handleTopic} data-testid="myfavoritestore">my favorite store</Dropdown.Item>
+          <Dropdown.Item onClick={handleTopic} data-testid="myfavoritestore">
+            my favorite store
+          </Dropdown.Item>
         </DropdownButton>
       </InputGroup>
 
@@ -126,7 +130,12 @@ export default function PromptForm(props) {
           />
         </Form.Group>
         <div className="d-flex my-3">
-          <Button className="flex-fill me-1" variant="secondary" type="reset" onClick={handleReset}>
+          <Button
+            className="flex-fill me-1"
+            variant="secondary"
+            type="reset"
+            onClick={handleReset}
+          >
             Reset
           </Button>
           <Button
