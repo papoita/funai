@@ -1,7 +1,7 @@
 import Prompt from "./Prompt";
 
 export default function PromptList(props) {
-  const { results, loading } = props;
+  const { results, loading, setResults } = props;
   
 
   if (loading) {
@@ -21,7 +21,7 @@ export default function PromptList(props) {
   return (
     <section className="prompt-list w-75 my-4">
       {results.map((el) => (
-        <Prompt {...el} />
+        <Prompt key={el.id} {...el} setResults={setResults} />
       ))}
     </section>
   );

@@ -1,19 +1,22 @@
-import { useState } from "react";
 import { Card } from "react-bootstrap";
-import { FaRegHeart } from "react-icons/fa";
+import { FaHeart, FaThumbsDown, FaLightbulb } from "react-icons/fa";
 import { format } from "timeago.js";
 import { IconContext } from "react-icons";
+import useActions from "../hooks/useActions";
 
 export default function Prompt(props) {
-  const { id, prompt, text, time } = props;
-  const [like, setLike] = useState(false);
-
-  function handleLike() {
-    setLike(!like);
-  }
+  const { id, prompt, text, time, setResults, like, thumbsDown, lightBulb } = props;
+  const {
+    currentLike,
+    currentThumbsDown,
+    currentLightBulb,
+    handleLike,
+    handleThumbsDown,
+    handleLightBulb,
+  } = useActions({setResults, like, thumbsDown, lightBulb});
 
   return (
-    <Card key={id} border="primary" className="my-4">
+    <Card border="primary" className="my-4">
       <Card.Body>
         <Card.Title>{prompt}</Card.Title>
         <Card.Text>{text}</Card.Text>
@@ -23,9 +26,22 @@ export default function Prompt(props) {
           {" "}
           {time.toDateString()} / {format(time)}{" "}
         </span>
-        <div className="footer-icons">
-          <IconContext.Provider value={{ color: like ? "red" : "black" }}>
-            <FaRegHeart className="heart-icon" onClick={() => handleLike(id)} />
+        <div
+          className="footer-icons d-flex justify-content-between "
+          style={{ width: "15%" }}
+        >
+          <IconContext.Provider value={{ color: currentLike ? "tomato" : "black" }}>
+            <FaHeart onClick={() => handleLike(id)} />
+          </IconContext.Provider>
+          <IconContext.Provider
+            value={{ color: currentThumbsDown ? "royalblue" : "black" }}
+          >
+            <FaThumbsDown onClick={() => handleThumbsDown(id)} />
+          </IconContext.Provider>
+          <IconContext.Provider
+            value={{ color: currentLightBulb ? "yellow" : "black" }}
+          >
+            <FaLightbulb onClick={() => handleLightBulb(id)} />
           </IconContext.Provider>
         </div>
       </Card.Footer>
