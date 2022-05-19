@@ -100,7 +100,6 @@ export default function PromptForm(props) {
           <Dropdown.Item onClick={handleThing}>catchline</Dropdown.Item>
           <Dropdown.Item onClick={handleThing}>pitch</Dropdown.Item>
           <Dropdown.Item onClick={handleThing}>rhyme</Dropdown.Item>
-          <Dropdown.Item onClick={handleThing}>palindrome</Dropdown.Item>
           <Dropdown.Item onClick={handleThing}>poem</Dropdown.Item>
           <Dropdown.Item onClick={handleThing}>story</Dropdown.Item>
           <Dropdown.Item onClick={handleThing}>song</Dropdown.Item>
@@ -116,7 +115,6 @@ export default function PromptForm(props) {
         >
           <Dropdown.Item onClick={handleTopic}>a new job</Dropdown.Item>
           <Dropdown.Item onClick={handleTopic}>a trip</Dropdown.Item>
-          <Dropdown.Item onClick={handleTopic}>a new bakery</Dropdown.Item>
           <Dropdown.Item onClick={handleTopic}>an apple</Dropdown.Item>
           <Dropdown.Item onClick={handleTopic}>a small dog</Dropdown.Item>
           <Dropdown.Item onClick={handleTopic}>Shopify</Dropdown.Item>
