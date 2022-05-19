@@ -15,7 +15,7 @@ function App() {
       <Navigation />
       <main className="d-flex flex-column align-items-center my-5 vh-100 mx-auto">
         <PromptForm setResults={setResults} setLoading={setLoading} loading={loading} />
-        <PromptList results={results} loading={loading} />
+        <PromptList results={results} loading={loading} setResults={setResults}/>
       </main>
       < Footer />
     </>
