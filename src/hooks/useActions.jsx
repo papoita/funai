@@ -12,7 +12,7 @@ const{setResults, like, thumbsDown, lightBulb} = initialState
     setResults(prevResults=> {
       const promptObjIndex = prevResults.findIndex(el=>el.id===id)
       const likedPromptObj = {...prevResults[promptObjIndex], like: !like}
-      return [likedPromptObj, ...prevResults.slice(0, promptObjIndex), ...prevResults.slice(promptObjIndex + 1)]
+      return [...prevResults.slice(0, promptObjIndex), likedPromptObj, ...prevResults.slice(promptObjIndex + 1)]
     })
   }
   function handleThumbsDown(id) {
@@ -20,7 +20,7 @@ const{setResults, like, thumbsDown, lightBulb} = initialState
     setResults(prevResults=> {
       const promptObjIndex = prevResults.findIndex(el=>el.id===id)
       const thumbsDownPromptObj = {...prevResults[promptObjIndex], thumbsDown: !thumbsDown}
-      return [...prevResults.slice(0, promptObjIndex), ...prevResults.slice(promptObjIndex + 1), thumbsDownPromptObj,]
+      return [...prevResults.slice(0, promptObjIndex), thumbsDownPromptObj, ...prevResults.slice(promptObjIndex + 1)]
     })
 
   }
@@ -29,7 +29,7 @@ const{setResults, like, thumbsDown, lightBulb} = initialState
     setResults(prevResults=> {
       const promptObjIndex = prevResults.findIndex(el=>el.id===id)
       const lightBulbPromptObj = {...prevResults[promptObjIndex], lightBulb: !lightBulb}
-      return [lightBulbPromptObj, ...prevResults.slice(0, promptObjIndex), ...prevResults.slice(promptObjIndex + 1)]
+      return [ ...prevResults.slice(0, promptObjIndex), lightBulbPromptObj, ...prevResults.slice(promptObjIndex + 1)]
     })
   }
 
