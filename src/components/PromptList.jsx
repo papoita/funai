@@ -7,7 +7,7 @@ export default function PromptList(props) {
   if (loading) {
     return (
       <section className="prompt-list w-75 m-4">
-        <div className="mw-100">
+        <div className="w-50 mx-auto">
           <img
             alt="lightbulb loading gif"
             src="https://i.giphy.com/media/dAoHbGjH7k5ZTeQeBI/giphy.webp"
