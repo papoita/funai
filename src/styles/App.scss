@@ -1,9 +1,18 @@
-
 $theme-colors: (
-  "primary": #014C3E,
-  "secondary":#96BF45,
-  "warning":  #ff6347,
+  "primary": #014c3e,
+  "secondary": #96bf45,
+  "warning": #ff6347,
+  "light": white,
 );
 
+$dropdown-link-hover-color: white;
+$dropdown-link-hover-bg: #014c3eb5;
+
+$input-group-addon-color: white;
+$input-group-addon-bg: #014c3e;
 
 @import "~bootstrap/scss/bootstrap";
+
+.card-prompt:hover {
+  box-shadow: 2px 2px 3px #014c3eb5;
+}

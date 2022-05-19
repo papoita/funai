@@ -93,7 +93,7 @@ export default function PromptForm(props) {
           id="input-group-dropdown-1"
           align="end"
         >
-          <Dropdown.Item onClick={handleThing} data-testid="catchline">
+          <Dropdown.Item className="" onClick={handleThing} data-testid="catchline">
             catchline
           </Dropdown.Item>
           <Dropdown.Item onClick={handleThing}>poem</Dropdown.Item>
@@ -139,7 +139,7 @@ export default function PromptForm(props) {
         </Form.Group>
         <div className="d-flex my-3">
           <Button
-            className="flex-fill me-1"
+            className="w-25 me-1"
             variant="secondary"
             type="reset"
             onClick={handleReset}

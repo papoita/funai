@@ -16,7 +16,7 @@ export default function Prompt(props) {
   } = useActions({setResults, like, thumbsDown, lightBulb});
 
   return (
-    <Card border="primary" className="my-4">
+    <Card border="primary" className="my-4 card-prompt">
       <Card.Body>
         <Card.Title>{prompt}</Card.Title>
         <Card.Text>{text}</Card.Text>
