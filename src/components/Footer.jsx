@@ -4,8 +4,8 @@ import { FaGithub, FaCoffee } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <Card bg="primary" variant="light">
-      <Card.Footer className="d-flex text-muted justify-content-center  ">
+    <Card bg="primary" variant="light" className=" fixed-bottom mt-5">
+      <Card.Footer className="d-flex text-muted justify-content-center ">
         <a href={"https://github.com/papoita/funai"}>
           <FaGithub style={{ color: "#96BF45", margin: "0 20px" }} />
         </a>
