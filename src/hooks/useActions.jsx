@@ -20,7 +20,7 @@ const{setResults, like, thumbsDown, lightBulb} = initialState
     setResults(prevResults=> {
       const promptObjIndex = prevResults.findIndex(el=>el.id===id)
       const thumbsDownPromptObj = {...prevResults[promptObjIndex], thumbsDown: !thumbsDown}
-      return [thumbsDownPromptObj, ...prevResults.slice(0, promptObjIndex), ...prevResults.slice(promptObjIndex + 1)]
+      return [...prevResults.slice(0, promptObjIndex), ...prevResults.slice(promptObjIndex + 1), thumbsDownPromptObj,]
     })
 
   }
