@@ -97,7 +97,13 @@ export default function PromptForm(props) {
             catchline
           </Dropdown.Item>
           <Dropdown.Item onClick={handleThing}>poem</Dropdown.Item>
+          <Dropdown.Item onClick={handleThing}>catchline</Dropdown.Item>
+          <Dropdown.Item onClick={handleThing}>pitch</Dropdown.Item>
+          <Dropdown.Item onClick={handleThing}>rhyme</Dropdown.Item>
+          <Dropdown.Item onClick={handleThing}>palindrome</Dropdown.Item>
+          <Dropdown.Item onClick={handleThing}>poem</Dropdown.Item>
           <Dropdown.Item onClick={handleThing}>story</Dropdown.Item>
+          <Dropdown.Item onClick={handleThing}>song</Dropdown.Item>
         </DropdownButton>
 
         <InputGroup.Text id="basic-addon2">about </InputGroup.Text>
@@ -108,9 +114,13 @@ export default function PromptForm(props) {
           id="input-group-dropdown-2"
           align="end"
         >
+          <Dropdown.Item onClick={handleTopic}>a new job</Dropdown.Item>
+          <Dropdown.Item onClick={handleTopic}>a trip</Dropdown.Item>
           <Dropdown.Item onClick={handleTopic}>a new bakery</Dropdown.Item>
           <Dropdown.Item onClick={handleTopic}>an apple</Dropdown.Item>
-
+          <Dropdown.Item onClick={handleTopic}>a small dog</Dropdown.Item>
+          <Dropdown.Item onClick={handleTopic}>Shopify</Dropdown.Item>
+          <Dropdown.Item onClick={handleTopic}>a green apple</Dropdown.Item>
           <Dropdown.Item onClick={handleTopic} data-testid="myfavoritestore">
             my favorite store
           </Dropdown.Item>
@@ -122,7 +132,7 @@ export default function PromptForm(props) {
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Control
             as="textarea"
-            rows={5}
+            rows={3}
             className="border border-secondary"
             name="text"
             value={userInput}

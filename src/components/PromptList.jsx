@@ -6,7 +6,7 @@ export default function PromptList(props) {
 
   if (loading) {
     return (
-      <section className="prompt-list w-75 my-4">
+      <section className="prompt-list w-75 m-4">
         <div className="mw-100">
           <img
             alt="lightbulb loading gif"
