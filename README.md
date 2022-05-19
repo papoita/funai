@@ -1,4 +1,4 @@
-@[papoita](https://github.com/papoita) | version 1.0.0
+@[papoita](https://github.com/papoita) | version 1.0.1
 
 # FunAI project / [inspirAItion app](https://inspiraition.netlify.app/)
 
@@ -11,6 +11,8 @@ Is a web application that allows users to submit text and get a completion respo
 
 * A dropdown menu provides example prompt recommendations allowing the UI to guide the user. It automatically fills the textarea with the user's selection.
 
+* Aditional styling allows the user to know which options they are selecting.
+
 * The user can modify the placeholder and add any desired input in the textarea.
 
 * The user can reset the form and clear the textarea.
@@ -19,9 +21,11 @@ Is a web application that allows users to submit text and get a completion respo
 
 * The response from the API is rendered from newest to oldest in a humanized manner, showing the date and the timeago it was created.
 
-* There is a clickable heart icon that will change color if the user likes/unlikes the post response.
+* There is a clickable heart, a thumbsdown and a lightbulb icon that will change color if the user likes/unlikes the post response.
 
-* The interface is simple, straightforward and responsive. 
+* Each prompt has a hover option to improve UX.
+
+* The interface is simple, straightforward and responsive. It is cohesive and follows color schema. 
 
 * Links to the repo and linkedin of the developer are included in the footer.
 
@@ -42,7 +46,6 @@ Is a web application that allows users to submit text and get a completion respo
 
 ### InspirAItion UI v1
 !["v1"](/docs/inspirAItion.png)
-
 
 
 ## [OpenAI API](https://beta.openai.com/docs/introduction)
