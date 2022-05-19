@@ -15,8 +15,14 @@ const{setResults, like, thumbsDown, lightBulb} = initialState
       return [likedPromptObj, ...prevResults.slice(0, promptObjIndex), ...prevResults.slice(promptObjIndex + 1)]
     })
   }
-  function handleThumbsDown() {
+  function handleThumbsDown(id) {
     setCurrentThumbsDown(!thumbsDown);
+    setResults(prevResults=> {
+      const promptObjIndex = prevResults.findIndex(el=>el.id===id)
+      const thumbsDownPromptObj = {...prevResults[promptObjIndex], thumbsDown: !thumbsDown}
+      return [thumbsDownPromptObj, ...prevResults.slice(0, promptObjIndex), ...prevResults.slice(promptObjIndex + 1)]
+    })
+
   }
   function handleLightBulb() {
     setCurrentLightBulb(!lightBulb);
