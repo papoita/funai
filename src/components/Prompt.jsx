@@ -39,7 +39,7 @@ export default function Prompt(props) {
             <FaThumbsDown onClick={() => handleThumbsDown(id)} />
           </IconContext.Provider>
           <IconContext.Provider
-            value={{ color: currentLightBulb ? "yellow" : "black" }}
+            value={{ color: currentLightBulb ? "gold" : "black" }}
           >
             <FaLightbulb onClick={() => handleLightBulb(id)} />
           </IconContext.Provider>
