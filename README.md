@@ -37,8 +37,11 @@ Is a web application that allows users to submit text and get a completion respo
 
 ## Screenshots
 
-### InspirAItion UI
-!["Create Appointment"](/docs/inspirAItion.png)
+### InspirAItion UI v2
+!["v2"](/docs/UI_2.png)
+
+### InspirAItion UI v1
+!["v1"](/docs/inspirAItion.png)
 
 
 
