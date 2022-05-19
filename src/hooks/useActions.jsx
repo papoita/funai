@@ -24,8 +24,13 @@ const{setResults, like, thumbsDown, lightBulb} = initialState
     })
 
   }
-  function handleLightBulb() {
+  function handleLightBulb(id) {
     setCurrentLightBulb(!lightBulb);
+    setResults(prevResults=> {
+      const promptObjIndex = prevResults.findIndex(el=>el.id===id)
+      const lightBulbPromptObj = {...prevResults[promptObjIndex], lightBulb: !lightBulb}
+      return [lightBulbPromptObj, ...prevResults.slice(0, promptObjIndex), ...prevResults.slice(promptObjIndex + 1)]
+    })
   }
 
   useDebugValue("useActions");
